@@ -7,6 +7,5 @@ the right is +-.02 away from 0. Happy strumming!
 numpy, pyAudio
 
 ## What's next?
-I'm working on making a UI that visualizes how far the note is from where you want it to be so you don't have to look at the command line is all day.
-Also, this will be turned into an object that can perform several functions(general tuning, watching for one note, adjusting NOTE_MIN and NOTE_MAX for guitars, bass, banjo, etc.)
-and pushed as a module on PyPi so you can insert a tuner within your app!
+I'm working on making a UI with PyGUI that visualizes how far the note is from where you want it to be so you don't have to look at the command line is all day.
+Also, this will be turned into an object that can perform several functions(general tuning, watching for one note, adjusting NOTE_MIN and NOTE_MAX for guitars, bass, banjo, etc.) and pushed as a module on PyPi so you can insert a tuner within your app!
