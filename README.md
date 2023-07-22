@@ -4,8 +4,7 @@ Run the script, wait a second, and strum a chord. The base note should appear ri
 the right is +-.02 away from 0. Happy strumming!
 
 ## Modules Required
-numpy
-pyAudio
+numpy, pyAudio
 
 ## What's next?
 I'm working on making a UI that visualizes how far the note is from where you want it to be so you don't have to look at the command line is all day.
