@@ -1,5 +1,6 @@
 import numpy as np
 import pyaudio
+import time
 
 NOTE_MIN = 60       # C4
 NOTE_MAX = 69       # A4
@@ -40,9 +41,11 @@ stream.start_stream()
 # Hanning Window - helps cut down non-applicable local maxima and isolate our note frequency
 window = 0.5 * (1 - np.cos(np.linspace(0, 2*np.pi, SAMPLES_PER_FFT, False)))
 
+curr_note_ind = 0
+first = True
 print('Detecting notes now!')
 
-while stream.is_active():
+while stream.is_active() and curr_note_ind < 4:
 
     # shift buffer for space for new data
     buf[:-FRAME_SIZE] = buf[FRAME_SIZE:]
@@ -61,5 +64,19 @@ while stream.is_active():
 
     num_frames += 1
 
+    ukulele_notes = ['G', 'C', 'E', 'A']
+
+    if first:
+        print('Now tuning ' + ukulele_notes[curr_note_ind])
+        first = False
+        time.sleep(3)
     if num_frames >= FRAMES_PER_FFT:
         print('note: {:>3s} \t{:+.2f}'.format(noteName(n0), nDelta))
+        if noteName(n0)[0] == ukulele_notes[curr_note_ind] and abs(nDelta) <= .03:
+            print(ukulele_notes[curr_note_ind] + ' is in tune!')
+            curr_note_ind += 1
+            first = True
+            time.sleep(1)
+                
+print('Your ukulele is in tune!')
+time.sleep(10)
