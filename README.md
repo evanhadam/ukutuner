@@ -7,6 +7,7 @@ the right is +-.02 away from 0. Happy strumming!
 numpy, pyAudio
 
 ## Under Construction
-- UI Implimentation to be able to see wavelengths of noise and how far it is from the tuned note
+- Video demo of project
+- UI implimentation to be able to see wavelengths of noise and how far it is from the tuned note
 - Adjusting min and max note to make the program compatible for bass, guitar, banjo, etc.
 - Turning this from a script to callable functions and uploading as a module to PyPi
